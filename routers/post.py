@@ -19,7 +19,7 @@ def get_posts(db: Session = Depends(get_db)):
     return db_post.get_all(db)
 
 
-@router.delete("/delete")
+@router.delete("/delete/{id}")
 def delete_post(id: int, db: Session = Depends(get_db)):
     return db_post.delete_post(db,id)
 
